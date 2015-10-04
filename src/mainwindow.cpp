@@ -3,6 +3,7 @@
 //#include "network.h"
 
 #include <QMessageBox>
+#include <QFile>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -31,4 +32,24 @@ void MainWindow::showAboutDialog()
 void MainWindow::updateData()
 {
     qDebug("Updating data...\n");
+    this->readUpdateFile();
+}
+
+void MainWindow::readUpdateFile()
+{
+    QFile file("data.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qCritical("Unable reading data file..\n");
+        return;
+    }
+
+    QByteArray line;
+    while(!file.atEnd()){
+        line = file.readLine();
+        if(line.length() > 1) {
+            qDebug("processing: ");
+            qDebug(line);
+        }
+    }
+
 }
