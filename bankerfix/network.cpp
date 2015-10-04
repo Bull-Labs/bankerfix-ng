@@ -1,7 +1,19 @@
 #include "network.h"
+#include "qmainwindow.h"
+#include <qdebug.h>
+#include <qobject.h>
 
-network::network()
+Network::Network(QObject* parent) : QObject(parent)
+{
+}
+
+Network::~Network()
 {
 
+}
+
+void Network::updateData()
+{
+    qDebug("Updating data...\n");
 }
 

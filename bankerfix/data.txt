@@ -1,0 +1,4 @@
+/tmp/mal/bb.exe
+/tmp/mal2/itau23.exe
+
+
