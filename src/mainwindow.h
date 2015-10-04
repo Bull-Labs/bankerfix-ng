@@ -15,8 +15,10 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+
 public slots:
     void showAboutDialog();
+    void updateData();
 
 private:
     Ui::MainWindow *ui;
