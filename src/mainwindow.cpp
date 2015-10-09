@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //connect(ui->action_About, ui->action_About->triggered(), this, this->showAboutDialog);
     connect(ui->action_About, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
     connect(ui->action_Update, SIGNAL(triggered()), this, SLOT(updateData()));
+    connect(ui->pushButton_Update, SIGNAL(clicked()), this, SLOT(updateData()));
 }
 
 MainWindow::~MainWindow()

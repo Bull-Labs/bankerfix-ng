@@ -13,7 +13,96 @@
   <property name="windowTitle">
    <string>BankerFix</string>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QLabel" name="labellogo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>141</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap resource="bankerfix-ng-resources.qrc">:/img/img/bull-labs.jpg</pixmap>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_SearchBankers">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>160</y>
+      <width>151</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search Bankers (fast)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_ScanMalware">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>190</y>
+      <width>151</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Scan for Malware (slow)</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Update">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>220</y>
+      <width>151</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>8</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>&amp;Update Database</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_textlogo">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>0</y>
+      <width>181</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>BankerFix - NG</string>
+    </property>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
@@ -27,7 +116,14 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <widget class="QMenu" name="menu_Import">
+     <property name="title">
+      <string>&amp;Import</string>
+     </property>
+     <addaction name="action_Yara_File"/>
+    </widget>
     <addaction name="action_Update"/>
+    <addaction name="menu_Import"/>
     <addaction name="action_Quit"/>
    </widget>
    <widget class="QMenu" name="menu_About">
@@ -63,9 +159,16 @@
     <string>&amp;About</string>
    </property>
   </action>
+  <action name="action_Yara_File">
+   <property name="text">
+    <string>&amp;Yara File (rules)</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="bankerfix-ng-resources.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>action_Quit</sender>
@@ -74,8 +177,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>303</x>
-     <y>200</y>
+     <x>-1</x>
+     <y>-1</y>
     </hint>
     <hint type="destinationlabel">
      <x>303</x>
